@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://chj31hbiiqv7f"]
+
+[ext_resource type="Script" uid="uid://ded5ekthrgw6g" path="res://Script/m_menu.gd" id="1_1rerr"]
+
+[node name="MMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1rerr")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 453.0
+offset_top = 249.0
+offset_right = 620.0
+offset_bottom = 272.0
+text = "Fabbri meu professor"
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 546.0
+offset_right = 672.0
+offset_bottom = 581.0
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 596.0
+offset_right = 670.0
+offset_bottom = 640.0
+text = "Quit"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
