@@ -28,18 +28,17 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if Input.is_action_pressed("Left"):
 		Camera.rotate_z(deg_to_rad(strafe_rotation))
-		if not Input.is_action_pressed("Left"):
-			if Camera.rotation.z > 0:
-				Camera.rotate_z(deg_to_rad(strafe_rotation * 0.5))
-	elif Input.is_action_pressed("Right"):
+	
+	if not Input.is_action_pressed("Left"):
+		if Camera.rotation.z > 0:
+			Camera.rotate_z(-deg_to_rad(strafe_rotation * 0.5))
+	if Input.is_action_pressed("Right"):
 		Camera.rotate_z(-deg_to_rad(strafe_rotation))
-		if not Input.is_action_pressed("Right"):
-			if Camera.rotation.z < 0:
-				Camera.rotate_z(deg_to_rad(-strafe_rotation*0.5))
-
-	
-	
 		
+	if not Input.is_action_pressed("Right"):
+		if Camera.rotation.z < 0:
+			Camera.rotate_z(deg_to_rad(strafe_rotation*0.5))
+				
 	Camera.rotation.z = clamp(Camera.rotation.z , -0.05, 0.05)
 	if not is_on_floor():
 		velocity += get_gravity() * delta
