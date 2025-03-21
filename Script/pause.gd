@@ -20,7 +20,6 @@ func _on_resume_pressed():
 	visible = false
 	 # Replace with function body.
 
-
 func _on_options_pressed():
 	pass # Replace with function body.
 

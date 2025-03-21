@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://cduvfklrw83wy"]
+[gd_scene load_steps=17 format=3 uid="uid://cduvfklrw83wy"]
 
 [ext_resource type="Texture2D" uid="uid://b71q13e3px7cm" path="res://Assets/icon.svg" id="1_fj7yv"]
 [ext_resource type="Script" uid="uid://bd8r5no457csf" path="res://Script/p_.gd" id="2_tlwt5"]
 [ext_resource type="Script" uid="uid://deixvof4m17fu" path="res://Script/en.gd" id="3_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://b7rdw7j6xjkqx" path="res://Assets/17c6c453-70ab-4a87-80bf-eccc91be84a3.jpg" id="3_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://bu7k4yvnmy3tg" path="res://Scenes/hud.tscn" id="4_o06y3"]
 [ext_resource type="PackedScene" uid="uid://tiheupku7jqi" path="res://Scenes/pause.tscn" id="5_036b0"]
 [ext_resource type="Texture2D" uid="uid://b6gkvrxhc5brr" path="res://Assets/crosshair179.png" id="6_gbfbk"]
 
@@ -66,6 +67,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07842, 0)
 
 [node name="Camera3D" type="Camera3D" parent="P_/headd"]
 
+[node name="HUD" parent="P_/headd" instance=ExtResource("4_o06y3")]
+
 [node name="UI" type="Control" parent="P_"]
 layout_mode = 3
 anchors_preset = 0
@@ -92,3 +95,5 @@ shape = SubResource("ConvexPolygonShape3D_036b0")
 
 [node name="Pause" parent="." instance=ExtResource("5_036b0")]
 process_mode = 3
+
+[editable path="P_/headd/HUD"]

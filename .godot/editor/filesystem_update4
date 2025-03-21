@@ -1,0 +1,5 @@
+res://Scenes/menu.tscn
+res://Scenes/hud.tscn
+res://Scenes/world.tscn
+res://Scenes/pause.tscn
+res://Script/p_.gd

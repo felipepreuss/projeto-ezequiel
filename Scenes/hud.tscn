@@ -1,0 +1,86 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu7k4yvnmy3tg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3gfia"]
+bg_color = Color(0, 0, 0, 0.466667)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0onf"]
+bg_color = Color(0.729412, 0, 0.0117647, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Color" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 503.0
+offset_right = -774.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(291, -138)
+color = Color(0.345098, 0.345098, 0.345098, 0.482353)
+
+[node name="Vbox" type="VBoxContainer" parent="Color"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = -114.0
+offset_right = 347.0
+offset_bottom = -19.0
+grow_vertical = 0
+
+[node name="Vida" type="ProgressBar" parent="Color/Vbox"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_3gfia")
+theme_override_styles/fill = SubResource("StyleBoxFlat_e0onf")
+max_value = 200.0
+value = 50.0
+
+[node name="Bala" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 774.0
+offset_top = 503.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(291, -138)
+color = Color(0.345098, 0.345098, 0.345098, 0.482353)
+
+[node name="VBox" type="VBoxContainer" parent="Bala"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 11.0
+offset_right = -15.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Bala/VBox"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+theme_override_font_sizes/font_size = 92
+text = "110/90"
