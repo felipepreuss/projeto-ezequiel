@@ -6,12 +6,14 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
+var bala = preload("res://Scenes/bala.tscn")
+@onready var pos = $headd/weapon/bullet_pos
+
 const SENSITIVITY = 0.003
 
 var life_value = 200
-# Called when the node enters the scene tree for the first time.
+
 var strafe_rotation = 1
-	
 
 
 func _ready():
@@ -19,13 +21,14 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	crosshair.position.x = get_viewport().size.x /2 - 36 # Replace with function body.
 	crosshair.position.y = get_viewport().size.y /2 - 36
+	
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		Head.rotate_y(-event.relative.x * SENSITIVITY)
 		Camera.rotate_x(-event.relative.y * SENSITIVITY)
 		Camera.rotation.x = clamp(Camera.rotation.x, -deg_to_rad(70), deg_to_rad(70))
+		
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
 	if Input.is_action_pressed("Left"):
 		Camera.rotate_z(deg_to_rad(strafe_rotation))
 	
@@ -59,3 +62,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	move_and_slide()
+	
+	#atirar
+	if Input.is_action_just_pressed("Left-Click"):
+		var bullet = bala.instantiate()
+		bullet.position = pos.global_position
+		bullet.transform.basis = pos.global_transform.basis
+		get_parent().add_child(bullet)
