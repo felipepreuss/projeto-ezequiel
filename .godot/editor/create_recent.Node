@@ -1,3 +1,8 @@
+Marker3D
+MeshInstance3D
+Timer
+CollisionShape3D
+CharacterBody3D
 Label
 VBoxContainer
 CanvasLayer
