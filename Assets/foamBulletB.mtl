@@ -1,0 +1,19 @@
+<<<<<<< HEAD
+# Created by Kenney (www.kenney.nl)
+
+newmtl yellow
+Kd 0.9960784 0.7764706 0.2196078
+
+newmtl pink
+Kd 0.9960784 0.2196078 0.4117647
+
+=======
+# Created by Kenney (www.kenney.nl)
+
+newmtl yellow
+Kd 0.9960784 0.7764706 0.2196078
+
+newmtl pink
+Kd 0.9960784 0.2196078 0.4117647
+
+>>>>>>> 2a6804b3367ede3fb9d8c0f89734f36c78e09ad4

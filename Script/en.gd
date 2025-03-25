@@ -2,7 +2,8 @@ extends CharacterBody3D
 @onready var player = $"../P_"
 const SPEED = 1.25
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
- 
+
+var vida = 300 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
