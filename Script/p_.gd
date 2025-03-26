@@ -1,15 +1,15 @@
 extends CharacterBody3D
 @onready var crosshair = $UI/Crosshair
-@onready var Head = $headd
-@onready var Camera = $headd/Camera3D
-@onready var vida = $headd/HUD/Color/Vbox/Vida
-@onready var weapon = $headd/weapon
+@onready var Head = $head
+@onready var Camera = $head/Camera3D
+@onready var vida = $head/HUD/Color/Vbox/Vida
+@onready var weapon = $head/weapon
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 # Weapon related vars
 var bala = preload("res://Scenes/bala.tscn")
-@onready var pos = $headd/weapon/bullet_pos
+@onready var pos = $head/Camera3D/bullet_pos
 
 const SENSITIVITY = 0.003
 
@@ -27,8 +27,9 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		Head.rotate_y(-event.relative.x * SENSITIVITY)
 		Camera.rotate_x(-event.relative.y * SENSITIVITY)
-		Camera.rotation.x = clamp(Camera.rotation.x, -deg_to_rad(70), deg_to_rad(70))
-	
+		Camera.rotation.x = clamp(Camera.rotation.x, deg_to_rad(-30), deg_to_rad(60))
+
+
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("Left"):
 		Camera.rotate_z(deg_to_rad(strafe_rotation))
