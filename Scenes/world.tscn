@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://b71q13e3px7cm" path="res://Assets/icon.svg" id="1_fj7yv"]
 [ext_resource type="Script" uid="uid://bd8r5no457csf" path="res://Script/p_.gd" id="2_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://0vejgwailbov" path="res://Scenes/weapon.tscn" id="3_5v1tr"]
 [ext_resource type="Script" uid="uid://deixvof4m17fu" path="res://Script/en.gd" id="3_aqk2v"]
-[ext_resource type="ArrayMesh" uid="uid://hrhcpmb5rcf2" path="res://Assets/blasterQ.obj" id="3_k7acu"]
 [ext_resource type="Texture2D" uid="uid://b7rdw7j6xjkqx" path="res://Assets/17c6c453-70ab-4a87-80bf-eccc91be84a3.jpg" id="3_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://bu7k4yvnmy3tg" path="res://Scenes/hud.tscn" id="4_o06y3"]
 [ext_resource type="Script" uid="uid://gyi5e0t64vnl" path="res://Script/bulletlabel.gd" id="5_5v1tr"]
@@ -64,21 +64,21 @@ mesh = SubResource("CapsuleMesh_gbfbk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42048, 0)
 shape = SubResource("ConvexPolygonShape3D_ioo17")
 
-[node name="headd" type="Node3D" parent="P_"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07842, 0)
+[node name="head" type="Node3D" parent="P_"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
-[node name="weapon" type="MeshInstance3D" parent="P_/headd"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.336664, -0.286971, -0.768482)
-mesh = ExtResource("3_k7acu")
+[node name="Camera3D" type="Camera3D" parent="P_/head"]
 
-[node name="bullet_pos" type="Marker3D" parent="P_/headd/weapon"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.398886)
+[node name="weapon" parent="P_/head/Camera3D" instance=ExtResource("3_5v1tr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.330179, -0.212613, -0.772317)
+skeleton = NodePath("../../../..")
 
-[node name="Camera3D" type="Camera3D" parent="P_/headd"]
+[node name="bullet_pos" type="Marker3D" parent="P_/head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0348849, -0.883013)
 
-[node name="HUD" parent="P_/headd" instance=ExtResource("4_o06y3")]
+[node name="HUD" parent="P_/head" instance=ExtResource("4_o06y3")]
 
-[node name="Label" parent="P_/headd/HUD/Bala/VBox" index="0"]
+[node name="Label" parent="P_/head/HUD/Bala/VBox" index="0"]
 text = ""
 script = ExtResource("5_5v1tr")
 
@@ -109,4 +109,4 @@ shape = SubResource("ConvexPolygonShape3D_036b0")
 [node name="Pause" parent="." instance=ExtResource("5_036b0")]
 process_mode = 3
 
-[editable path="P_/headd/HUD"]
+[editable path="P_/head/HUD"]
