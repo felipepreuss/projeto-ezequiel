@@ -3,14 +3,14 @@ extends CharacterBody3D
 @onready var Head = $head
 @onready var Camera = $head/Camera3D
 @onready var vida = $head/HUD/Color/Vbox/Vida
-@onready var weapon = $head/weapon
+@onready var weapon = $head/Camera3D/weapon
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 # Weapon related vars
 var bala = preload("res://Scenes/bala.tscn")
 @onready var pos = $head/Camera3D/bullet_pos
-
+@onready var animation_player = $head/Camera3D/weapon/AnimationPlayer
 const SENSITIVITY = 0.003
 
 var life_value = 200
@@ -64,6 +64,7 @@ func _physics_process(delta: float) -> void:
 	
 	#atirar
 	if Input.is_action_just_pressed("Left-Click") and Globals.have_ammo:
+		animation_player.play("shoot")
 		var bullet = bala.instantiate()
 		bullet.position = pos.global_position
 		bullet.transform.basis = pos.global_transform.basis
