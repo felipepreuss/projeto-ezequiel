@@ -1,1 +1,8 @@
 res://Scenes/menu.tscn
+res://Script/p_.gd
+res://Scenes/hud.tscn
+res://Scenes/world.tscn
+res://Scenes/bala.tscn
+res://Scenes/pause.tscn
+res://Scenes/Player.tscn
+res://Script/globals.gd

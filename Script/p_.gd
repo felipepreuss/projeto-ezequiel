@@ -1,24 +1,21 @@
 extends CharacterBody3D
 @onready var crosshair = $UI/Crosshair
-@onready var Head = $headd
-@onready var Camera = $headd/Camera3D
-@onready var vida = $headd/HUD/Color/Vbox/Vida
-@onready var weapon = $headd/weapon
+@onready var Head = $head
+@onready var Camera = $head/Camera3D
+@onready var vida = $head/HUD/Color/Vbox/Vida
+@onready var weapon = $head/Camera3D/weapon
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
-var rotation_amount = 0.3
-var bala = preload("res://Scenes/bala.tscn")
-@onready var pos = $headd/weapon/bullet_pos
-
-var bala = preload("res://Scenes/bala.tscn")
-@onready var pos = $headd/weapon/bullet_pos
-
+const ACELERATION = 2.2
+# Weapon related vars
+#var bala = preload("res://Scenes/bala.tscn")
+@onready var ray = $head/Camera3D/ray
+@onready var animation_player = $head/Camera3D/weapon/AnimationPlayer
 const SENSITIVITY = 0.003
 
 var life_value = 200
 
 var strafe_rotation = 1
-
 
 func _ready():
 	vida.value = life_value
@@ -30,30 +27,21 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		Head.rotate_y(-event.relative.x * SENSITIVITY)
 		Camera.rotate_x(-event.relative.y * SENSITIVITY)
-		Camera.rotation.x = clamp(Camera.rotation.x, -deg_to_rad(70), deg_to_rad(70))
-		
+		Camera.rotation.x = clamp(Camera.rotation.x, deg_to_rad(-30), deg_to_rad(60))
+
 func _physics_process(delta: float) -> void:
-	if Input.is_action_pressed("Left"):
-		Camera.rotate_z(deg_to_rad(strafe_rotation))
-	
-	if not Input.is_action_pressed("Left"):
-		if Camera.rotation.z > 0:
-			Camera.rotate_z(-deg_to_rad(strafe_rotation * 0.5))
 	if Input.is_action_pressed("Right"):
-		Camera.rotate_z(-deg_to_rad(strafe_rotation))
-		
-	if not Input.is_action_pressed("Right"):
-		if Camera.rotation.z < 0:
-			Camera.rotate_z(deg_to_rad(strafe_rotation*0.5))
-				
-	Camera.rotation.z = clamp(Camera.rotation.z , -0.05, 0.05)
+		Head.rotation.z = deg_to_rad(transform.basis.z.z)
+	elif Input.is_action_pressed("Left"):
+		Head.rotation.z = deg_to_rad(-transform.basis.z.z)
+	Head.rotation.z = clamp(Head.rotation.z, -0.05, 0.05)
+	if !Input.get_axis("Left","Right"):
+		Head.rotation.z = 0
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
 	# Handle jump.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 
@@ -66,16 +54,19 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	move_and_slide()
-	
 	#atirar
-	if Input.is_action_just_pressed("Left-Click"):
-		var bullet = bala.instantiate()
-		bullet.position = pos.global_position
-		bullet.transform.basis = pos.global_transform.basis
-<<<<<<< HEAD
-		#weapon.rotate_x(rotation_amount)
-		#clamp(rotation_amount,0,0.3)
-		#lerp(rotation_amount,rotation_amount,0)
-=======
->>>>>>> 2a6804b3367ede3fb9d8c0f89734f36c78e09ad4
-		get_parent().add_child(bullet)
+	if Input.is_action_just_pressed("Left-Click") and Globals.have_ammo:
+		animation_player.play("shoot")
+		if ray.is_colliding():
+			var target = ray.get_collider()
+			if target.is_in_group("Enemy"):
+				var dano = randi_range(0,3)
+				target.calcularDano(dano)
+		Globals.current_ammo -= 1
+	if Globals.current_ammo <= 0:
+		Globals.have_ammo = false
+	if Input.is_action_just_pressed("Reload") and !Globals.have_ammo:
+		Globals.current_ammo += 30
+		Globals.ammo -= Globals.current_ammo
+		if Globals.current_ammo >= 1:
+			Globals.have_ammo = true
