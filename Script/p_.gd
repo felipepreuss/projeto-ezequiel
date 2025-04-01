@@ -65,7 +65,11 @@ func _physics_process(delta: float) -> void:
 		Globals.current_ammo -= 1
 	if Globals.current_ammo <= 0:
 		Globals.have_ammo = false
-	if Input.is_action_just_pressed("Reload") and !Globals.have_ammo:
+	if Globals.ammo > 0:
+		Globals.can_reload = true
+	if Globals.ammo <= 0:
+		Globals.can_reload = false
+	if Input.is_action_just_pressed("Reload") and !Globals.have_ammo and Globals.can_reload:
 		Globals.current_ammo += 30
 		Globals.ammo -= Globals.current_ammo
 		if Globals.current_ammo >= 1:

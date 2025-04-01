@@ -1,5 +1,5 @@
 extends CharacterBody3D
-@onready var player = get_parent().get_node("Player")
+@export var player : CharacterBody3D
 const SPEED = 1.25
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var vida = 200

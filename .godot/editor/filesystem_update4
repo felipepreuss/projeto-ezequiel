@@ -1,9 +1,10 @@
 res://Scenes/menu.tscn
-res://Script/p_.gd
 res://Scenes/hud.tscn
-res://Scenes/world.tscn
 res://Scenes/bala.tscn
 res://Scenes/pause.tscn
 res://Scenes/Player.tscn
+res://Scenes/world.tscn
+res://Script/en.gd
 res://Script/globals.gd
-res://Script/bala.gd
+res://Script/p_.gd
+res://Script/m_menu.gd
