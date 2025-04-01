@@ -15,7 +15,7 @@ const SENSITIVITY = 0.003
 
 var life_value = 200
 
-var strafe_rotation = 1
+
 
 func _ready():
 	vida.value = life_value

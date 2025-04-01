@@ -6,3 +6,4 @@ res://Scenes/bala.tscn
 res://Scenes/pause.tscn
 res://Scenes/Player.tscn
 res://Script/globals.gd
+res://Script/bala.gd
