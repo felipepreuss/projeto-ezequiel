@@ -1,4 +1,4 @@
 extends Label
-
+@export var manager : WeaponsManager 
 func _physics_process(delta: float) -> void:
-	text = str(Globals.current_ammo)+"/"+str(Globals.ammo)
+	text = str(manager.current_ammo)+"/"+str(manager.ammo)

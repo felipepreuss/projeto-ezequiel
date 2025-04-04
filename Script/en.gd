@@ -4,10 +4,10 @@ const SPEED = 1.25
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var vida = 200
 
-var LOW_DAMAGE = randf_range(1,20)
-var MEDIUM_DAMAGE = randf_range(21,50)
-var BIG_DAMAGE = randf_range(51,100)
-var CRITICAL_DAMAGE = randf_range(101,200)
+#var LOW_DAMAGE = randf_range(1,20)
+#var MEDIUM_DAMAGE = randf_range(21,50)
+#var BIG_DAMAGE = randf_range(51,100)
+#var CRITICAL_DAMAGE = randf_range(101,200)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -27,9 +27,8 @@ func _process(delta):
 	move_and_slide()
 
 func calcularDano(dano:int):
-	var damage_type = [LOW_DAMAGE,MEDIUM_DAMAGE,BIG_DAMAGE,CRITICAL_DAMAGE]
-	vida -= damage_type[dano]
-	print(vida)
+	vida -= dano
+	
 	if vida <= 0:
 		queue_free()
  

@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://0vejgwailbov"]
-
-[ext_resource type="ArrayMesh" uid="uid://hrhcpmb5rcf2" path="res://Assets/blasterQ.obj" id="1_er6cq"]
-
-[node name="weapon" type="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.336664, -0.286971, -0.768482)
-mesh = ExtResource("1_er6cq")

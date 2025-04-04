@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://boih5pxaw8fjk"]
+
+[ext_resource type="PackedScene" uid="uid://baofovlykw0j8" path="res://Assets/Double Pistol.glb" id="1_wwapo"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="blaster-q2" parent="." instance=ExtResource("1_wwapo")]

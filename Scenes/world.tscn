@@ -42,3 +42,9 @@ player = NodePath("../P_")
 process_mode = 3
 
 [node name="P_" parent="." instance=ExtResource("4_8j60k")]
+
+[node name="Label" parent="P_/head/HUD/Bala/VBox" index="0" node_paths=PackedStringArray("manager")]
+manager = NodePath("../../../../Camera3D/WeaponManager")
+
+[editable path="P_"]
+[editable path="P_/head/HUD"]

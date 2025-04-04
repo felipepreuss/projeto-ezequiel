@@ -3,14 +3,14 @@ extends CharacterBody3D
 @onready var Head = $head
 @onready var Camera = $head/Camera3D
 @onready var vida = $head/HUD/Color/Vbox/Vida
-@onready var weapon = $head/Camera3D/weapon
+#@onready var weapon = $head/Camera3D/weapon
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const ACELERATION = 2.2
 # Weapon related vars
 #var bala = preload("res://Scenes/bala.tscn")
 @onready var ray = $head/Camera3D/ray
-@onready var animation_player = $head/Camera3D/weapon/AnimationPlayer
+#@onready var animation_player = $head/Camera3D/weapon/AnimationPlayer
 const SENSITIVITY = 0.003
 
 var life_value = 200
@@ -55,22 +55,18 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	move_and_slide()
 	#atirar
-	if Input.is_action_just_pressed("Left-Click") and Globals.have_ammo:
-		animation_player.play("shoot")
-		if ray.is_colliding():
-			var target = ray.get_collider()
-			if target.is_in_group("Enemy"):
-				var dano = randi_range(0,3)
-				target.calcularDano(dano)
-		Globals.current_ammo -= 1
-	if Globals.current_ammo <= 0:
-		Globals.have_ammo = false
-	if Globals.ammo > 0:
-		Globals.can_reload = true
-	if Globals.ammo <= 0:
-		Globals.can_reload = false
-	if Input.is_action_just_pressed("Reload") and !Globals.have_ammo and Globals.can_reload:
-		Globals.current_ammo += 30
-		Globals.ammo -= Globals.current_ammo
-		if Globals.current_ammo >= 1:
-			Globals.have_ammo = true
+	#if Input.is_action_just_pressed("Left-Click") and Globals.have_ammo:
+		#animation_player.play("shoot")
+		#if ray.is_colliding():
+			#var target = ray.get_collider()
+			#if target.is_in_group("Enemy"):
+				##var dano = randi_range(0,3)
+				##target.calcularDano(dano)
+		#Globals.current_ammo -= 1
+	#if Globals.current_ammo <= 0:
+		#Globals.have_ammo = false
+	#if Globals.ammo > 0:
+		#Globals.can_reload = true
+	#if Globals.ammo <= 0:
+		#Globals.can_reload = false
+	
