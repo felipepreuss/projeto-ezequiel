@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cktauvgithpx6"]
+
+[ext_resource type="PackedScene" uid="uid://cypvdibl62m18" path="res://Assets/Metralhadora.glb" id="1_4mdua"]
+
+[node name="Metralhadora" type="Node3D"]
+
+[node name="blaster-d2" parent="." instance=ExtResource("1_4mdua")]

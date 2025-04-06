@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvawgyt3nf0ny"]
+
+[ext_resource type="PackedScene" uid="uid://bdfihuhul7b3" path="res://Assets/shotgun.glb" id="1_0ym6k"]
+[ext_resource type="Script" uid="uid://v4v8r1ka44x4" path="res://Script/shotgun.gd" id="2_u0ide"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="blaster-r2" parent="." node_paths=PackedStringArray("raycontainer") instance=ExtResource("1_0ym6k")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("2_u0ide")
+raycontainer = NodePath("RayContainer")
+
+[node name="RayContainer" type="Node3D" parent="blaster-r2"]
+
+[node name="Ray1" type="RayCast3D" parent="blaster-r2/RayContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.085, 0)
+target_position = Vector3(0, 0, -20.5)
+debug_shape_custom_color = Color(1, 0, 0, 1)
+
+[node name="Ray2" type="RayCast3D" parent="blaster-r2/RayContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.085, 0)
+target_position = Vector3(0, 0, -20.5)
+debug_shape_custom_color = Color(1, 0, 0, 1)
+
+[node name="Ray3" type="RayCast3D" parent="blaster-r2/RayContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.085, 0)
+target_position = Vector3(0, 0, -20.5)
+debug_shape_custom_color = Color(1, 0, 0, 1)
+
+[node name="Ray4" type="RayCast3D" parent="blaster-r2/RayContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.085, 0)
+target_position = Vector3(0, 0, -20.5)
+debug_shape_custom_color = Color(1, 0, 0, 1)
+
+[node name="Ray5" type="RayCast3D" parent="blaster-r2/RayContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.085, 0)
+target_position = Vector3(0, 0, -20.5)
+debug_shape_custom_color = Color(1, 0, 0, 1)
+
+[node name="Ray6" type="RayCast3D" parent="blaster-r2/RayContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.085, 0)
+target_position = Vector3(0, 0, -20.5)
+debug_shape_custom_color = Color(1, 0, 0, 1)

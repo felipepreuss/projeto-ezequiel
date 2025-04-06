@@ -1,10 +1,9 @@
+Node3D
+RayCast3D
 WeaponsManager
 Marker3D
-Weapons
 Node
-Node3D
 MeshInstance3D
-RayCast3D
 Timer
 CollisionShape3D
 CharacterBody3D

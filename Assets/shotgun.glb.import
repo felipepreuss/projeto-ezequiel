@@ -3,17 +3,17 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://baofovlykw0j8"
-path="res://.godot/imported/Double Pistol.glb-89e40a979f54bd21e2a028fc7430df6c.scn"
+uid="uid://bdfihuhul7b3"
+path="res://.godot/imported/shotgun.glb-3641514b8ae87cb405d3e6527701a679.scn"
 
 [deps]
 
-source_file="res://Assets/Double Pistol.glb"
-dest_files=["res://.godot/imported/Double Pistol.glb-89e40a979f54bd21e2a028fc7430df6c.scn"]
+source_file="res://Assets/shotgun.glb"
+dest_files=["res://.godot/imported/shotgun.glb-3641514b8ae87cb405d3e6527701a679.scn"]
 
 [params]
 
-nodes/root_type="Node3D"
+nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

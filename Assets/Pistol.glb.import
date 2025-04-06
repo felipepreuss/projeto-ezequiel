@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bdfihuhul7b3"
+uid="uid://baofovlykw0j8"
 path="res://.godot/imported/Pistol.glb-886efb2df0b76e549aaed1cde397cf5e.scn"
 
 [deps]
@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Pistol.glb-886efb2df0b76e549aaed1cde397cf5e.s
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="Node3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
