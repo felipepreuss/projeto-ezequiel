@@ -9,3 +9,11 @@ res://Scenes/world.tscn
 res://Scenes/Enemy.tscn
 res://Scenes/metralhadora.tscn
 res://Script/shotgun.gd
+res://Script/bala.gd
+res://Script/bulletlabel.gd
+res://Script/en.gd
+res://Script/globals.gd
+res://Script/m_menu.gd
+res://Script/pause.gd
+res://Script/p_.gd
+res://Script/world.gd
