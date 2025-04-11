@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bjbcu2wv48jfb"]
 
 [ext_resource type="Script" uid="uid://bd8r5no457csf" path="res://Script/p_.gd" id="1_5ixxa"]
-[ext_resource type="Script" uid="uid://xm4mf1o5g1hx" path="res://weaponmanagement.gd" id="2_5ixxa"]
+[ext_resource type="Script" uid="uid://xm4mf1o5g1hx" path="res://Script/weaponmanagement.gd" id="2_5ixxa"]
 [ext_resource type="PackedScene" uid="uid://bu7k4yvnmy3tg" path="res://Scenes/hud.tscn" id="3_52ee3"]
 [ext_resource type="Texture2D" uid="uid://b6gkvrxhc5brr" path="res://Assets/crosshair179.png" id="5_megsn"]
 
