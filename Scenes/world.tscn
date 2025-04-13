@@ -41,7 +41,8 @@ player = NodePath("../P_")
 [node name="Pause" parent="." instance=ExtResource("5_036b0")]
 process_mode = 3
 
-[node name="P_" parent="." instance=ExtResource("4_8j60k")]
+[node name="P_" parent="." node_paths=PackedStringArray("weapon") instance=ExtResource("4_8j60k")]
+weapon = NodePath("head/Camera3D/WeaponManager")
 
 [node name="Label" parent="P_/head/HUD/Bala/VBox" index="0" node_paths=PackedStringArray("manager")]
 manager = NodePath("../../../../Camera3D/WeaponManager")

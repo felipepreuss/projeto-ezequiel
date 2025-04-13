@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjbcu2wv48jfb"]
+[gd_scene load_steps=8 format=3 uid="uid://bjbcu2wv48jfb"]
 
 [ext_resource type="Script" uid="uid://bd8r5no457csf" path="res://Script/p_.gd" id="1_5ixxa"]
 [ext_resource type="Script" uid="uid://bma03a7ufllbq" path="res://Script/weapon_manager.gd" id="2_dewec"]
+[ext_resource type="PackedScene" uid="uid://bdfihuhul7b3" path="res://Assets/shotgun.glb" id="3_5ixxa"]
 [ext_resource type="PackedScene" uid="uid://bu7k4yvnmy3tg" path="res://Scenes/hud.tscn" id="3_52ee3"]
 [ext_resource type="Texture2D" uid="uid://b6gkvrxhc5brr" path="res://Assets/crosshair179.png" id="5_megsn"]
 
@@ -27,11 +28,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="Camera3D" type="Camera3D" parent="head"]
 
-[node name="WeaponManager" type="Node3D" parent="head/Camera3D" node_paths=PackedStringArray("spawn_point")]
+[node name="WeaponManager" type="Node3D" parent="head/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.372, -0.2, -0.42)
 script = ExtResource("2_dewec")
-spawn_point = NodePath("GunPosition")
-balas = 1
+weapon_scenes = ExtResource("3_5ixxa")
 
 [node name="GunPosition" type="Marker3D" parent="head/Camera3D/WeaponManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.177, -0.095, -0.1)

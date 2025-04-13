@@ -2,6 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://baofovlykw0j8" path="res://Assets/Pistol.glb" id="1_dk60g"]
 
-[node name="Node3D" type="Node3D"]
+[node name="Pistol" type="Node3D"]
 
 [node name="blaster-q2" parent="." instance=ExtResource("1_dk60g")]

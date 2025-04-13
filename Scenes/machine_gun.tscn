@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccx5airsi6kwl"]
+
+[ext_resource type="Script" uid="uid://c7r5ymh3bmv6b" path="res://Script/machine_gun.gd" id="1_paadf"]
+
+[node name="Metralhadora" type="Node3D"]
+script = ExtResource("1_paadf")
+auto = true
+current_ammo = 25
+ammo = 200
+max_ammo = 25
+metadata/_custom_type_script = "uid://bma03a7ufllbq"
+
+[node name="RayCast3D" type="RayCast3D" parent="."]

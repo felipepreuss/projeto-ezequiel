@@ -28,7 +28,6 @@ func _process(delta):
 
 func calcularDano(dano:int):
 	vida -= dano
-	
 	if vida <= 0:
 		queue_free()
  

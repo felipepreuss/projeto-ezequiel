@@ -27,11 +27,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="Camera3D" type="Camera3D" parent="head"]
 
-[node name="WeaponManager" type="Node3D" parent="head/Camera3D" node_paths=PackedStringArray("spawn_point")]
+[node name="WeaponManager" type="Node3D" parent="head/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.372, -0.2, -0.42)
 script = ExtResource("2_dewec")
-spawn_point = NodePath("GunPosition")
-balas = 1
 
 [node name="GunPosition" type="Marker3D" parent="head/Camera3D/WeaponManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.177, -0.095, -0.1)
