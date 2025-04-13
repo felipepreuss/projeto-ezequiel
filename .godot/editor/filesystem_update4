@@ -1,9 +1,11 @@
+res://Scenes/pistol.tscn
+res://Scenes/menu.tscn
+res://Scenes/hud.tscn
+res://Scenes/pause.tscn
+res://Scenes/Player.tscn
 res://Scenes/world.tscn
 res://Scenes/Enemy.tscn
-res://Scenes/Pistol.tscn
 res://Scenes/shotgun.tscn
 res://Scenes/metralhadora.tscn
-res://Scenes/Player.tscn
-res://Scenes/pause.tscn
-res://Scenes/hud.tscn
-res://Scenes/menu.tscn
+res://Script/bulletlabel.gd
+res://Script/weaponmanagement.gd

@@ -27,19 +27,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="Camera3D" type="Camera3D" parent="head"]
 
-[node name="WeaponManager" type="Node3D" parent="head/Camera3D" node_paths=PackedStringArray("ray", "local")]
+[node name="WeaponManager" type="Node3D" parent="head/Camera3D" node_paths=PackedStringArray("local")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.372, -0.2, -0.42)
 script = ExtResource("2_5ixxa")
-ray = NodePath("../ray")
 local = NodePath("GunPosition")
+number_balas = 1
 
 [node name="GunPosition" type="Marker3D" parent="head/Camera3D/WeaponManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.177262, -0.0954163, -0.505836)
-
-[node name="ray" type="RayCast3D" parent="head/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0348849, -0.883013)
-target_position = Vector3(0, -1, -10.5)
-debug_shape_custom_color = Color(3.72304e-05, 3.72304e-05, 3.72304e-05, 1)
 
 [node name="HUD" parent="head" instance=ExtResource("3_52ee3")]
 

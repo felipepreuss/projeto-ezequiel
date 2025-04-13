@@ -1,7 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://cktauvgithpx6"]
+[gd_scene load_steps=3 format=3 uid="uid://cktauvgithpx6"]
 
 [ext_resource type="PackedScene" uid="uid://cypvdibl62m18" path="res://Assets/Metralhadora.glb" id="1_4mdua"]
+[ext_resource type="Script" uid="uid://xm4mf1o5g1hx" path="res://Script/weaponmanagement.gd" id="1_ts5bj"]
 
 [node name="Metralhadora" type="Node3D"]
+script = ExtResource("1_ts5bj")
+metadata/_custom_type_script = "uid://xm4mf1o5g1hx"
 
 [node name="blaster-d2" parent="." instance=ExtResource("1_4mdua")]
+
+[node name="Ray" type="RayCast3D" parent="."]

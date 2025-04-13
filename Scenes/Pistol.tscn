@@ -1,7 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://boih5pxaw8fjk"]
+[gd_scene load_steps=3 format=3 uid="uid://bvlq7as6kicv8"]
 
-[ext_resource type="PackedScene" uid="uid://baofovlykw0j8" path="res://Assets/Pistol.glb" id="1_dk60g"]
+[ext_resource type="Script" uid="uid://xm4mf1o5g1hx" path="res://Script/weaponmanagement.gd" id="1_j1qo2"]
+[ext_resource type="PackedScene" uid="uid://d4bmvdtiglt47" path="res://Assets/Pistola - Copia.glb" id="2_v21tj"]
 
-[node name="Node3D" type="Node3D"]
+[node name="Pistol" type="Node3D"]
+script = ExtResource("1_j1qo2")
+metadata/_custom_type_script = "uid://xm4mf1o5g1hx"
 
-[node name="blaster-q2" parent="." instance=ExtResource("1_dk60g")]
+[node name="Pistola - Copia" parent="." instance=ExtResource("2_v21tj")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="."]

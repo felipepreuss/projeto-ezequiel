@@ -9,7 +9,6 @@ const JUMP_VELOCITY = 4.5
 const ACELERATION = 2.2
 # Weapon related vars
 #var bala = preload("res://Scenes/bala.tscn")
-@onready var ray = $head/Camera3D/ray
 #@onready var animation_player = $head/Camera3D/weapon/AnimationPlayer
 const SENSITIVITY = 0.003
 
